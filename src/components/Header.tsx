@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-router'
+import { Link, useMatchRoute } from '@tanstack/react-router'
 
 import { useState } from 'react'
 
@@ -38,29 +38,30 @@ const menuItems: MenuItem[] = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const matchRoute = useMatchRoute()
 
   return (
     <>
       <nav className='flex justify-between px-4 py-4 items-center shadow-sm w-full sticky z-2 top-0 bg-white md:px-[80px] xl:px-[180px]'>
 
-        <Link className='flex items-center gap-2' to='/'>
+        <Link className='flex items-center gap-3' to='/'>
           <img src='/aiche-logo-light.svg' alt="AIChE Logo" 
-            className='w-7'/>
-          <p className='font-bold font-nunito text-[18px]'>AIChE SC ITENAS</p>
+            className='w-7 2xl:w-10'/>
+          <p className='font-bold font-nunito text-[18px] 2xl:text-[21px]'>AIChE SC ITENAS</p>
         </Link>
 
         <div className='hidden lg:flex absolute left-1/2 -translate-x-1/2'>
-          <ul className='flex gap-[20px]'>
+          <ul className='flex gap-[20px] 2xl:gap-[33px]'>
             {menuItems.map((item) => (
-              <li key={item.id} 
-                className='font-nunito text-[12px]'>
+              <li key={item.id} className='flex'>
                 
                 <Link to={item.path}
-                  activeProps={{
-                    className:
-                      'border-b-2 py-1 border-[#3B82F6]',
-                }}>
+                  className='font-nunito text-[12px] 2xl:text-[15px] group'>
                   {item.title}
+
+                  <div className={`bg-[#3B82F6] h-0.5 group-hover:w-full ${matchRoute({ to: item.path })
+                    ? "w-full"
+                    : "w-0"}`}></div>
                 </Link>
                 
               </li>
@@ -74,7 +75,7 @@ export default function Header() {
               className={`${isOpen ? "rotate-180" : "rotate-0"} w-5`}/>
           </button>
 
-          <button className='hidden lg:flex font-nunito font-bold bg-linear-to-b to-[#2563EB] from-[#10B981] px-4 py-1.5 text-white rounded-lg text-[12px] gap-1'
+          <button className='hidden lg:flex font-nunito font-bold bg-linear-to-b to-[#2563EB] from-[#10B981] px-5 py-1.5 text-white rounded-lg text-[12px] 2xl:text-[16px] gap-1 cursor-pointer hover:shadow-lg'
             >
             Join Us
             <img src="/button/right-arrow.svg" alt="" />
