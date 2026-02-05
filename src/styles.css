@@ -6,6 +6,16 @@
   transition-duration: 400ms;
 }
 
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @theme {
   --font-nunito: "Nunito", sans-serif;
   --font-ibm: "IBM Plex Sans", sans-serif;
