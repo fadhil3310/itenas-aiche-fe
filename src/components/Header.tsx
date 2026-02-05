@@ -1,16 +1,79 @@
 import { Link } from '@tanstack/react-router'
 
+import { useState } from 'react'
+
+interface MenuItem {
+  id: number;
+  title: string;
+  path: string;
+}
+
+const menuItems: MenuItem[] = [
+  {
+    id: 1,
+    title: "Home",
+    path: "/"
+  },
+  {
+    id: 2,
+    title: "About Us",
+    path: "/about-us"
+  },
+  {
+    id: 3,
+    title: "Berita",
+    path: "/news"
+  },
+  {
+    id: 4,
+    title: "Struktur Organisasi",
+    path: "/organizational-structure"
+  },
+  {
+    id: 5,
+    title: "Kontak",
+    path: "/contact"
+  }
+]
+
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <nav className='flex justify-between px-3 py-5'>
-      <Link className='flex items-center gap-2' to='/'>
-        <img src='/public/aiche-logo-light.svg' alt="AIChE Logo" 
-          className='w-7'/>
-        <p className='font-bold font-nunito'>AIChE SC ITENAS</p>
-      </Link>
-      <div></div>
-      <div className=''></div>
-    </nav>
+    <>
+      <nav className='flex justify-between px-4 py-4 items-center shadow-sm w-full sticky z-2 top-0 bg-white'>
+
+        <Link className='flex items-center gap-2' to='/'>
+          <img src='/aiche-logo-light.svg' alt="AIChE Logo" 
+            className='w-7'/>
+          <p className='font-bold font-nunito text-[18px]'>AIChE SC ITENAS</p>
+        </Link>
+
+        <div className='hidden'></div>
+
+        <div className='flex z-2'>
+          <button onClick={() => setIsOpen(!isOpen)}>
+            <img src='/sidebar-left.svg' alt="" 
+              className={`${isOpen ? "rotate-180" : "rotate-0"} w-5`}/>
+          </button>
+        </div>
+
+      </nav>
+
+      <aside className={`${isOpen ? 'translate-x-0' : 'translate-x-full'} flex h-screen font-nunito px-7 py-6 z-1 w-[65vw] bg-white fixed right-0 shadow-sm text-lg`}>
+        <nav>
+          <ul className='flex flex-col gap-3'>
+            {menuItems.map((item) => (
+              <li key={item.id}>
+                <Link to={item.path} onClick={() => setIsOpen(false)}>
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+    </>
   )
 }
 // export default function Header() {
