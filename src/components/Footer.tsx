@@ -84,15 +84,15 @@ export default function Footer() {
                     <div className="flex flex-col gap-3 w-auto">
                         <div>
                             <h2 className="font-ibm font-medium 2xl:text-[22px]">Quick Links</h2>
-                            <ul className="pt-3 flex flex-col gap-1 2xl:gap-2.5">
+                            <ul className="pt-3 flex flex-col gap-2 2xl:gap-2.5">
                                 {menuItems.map((item) => (
                                     <li key={item.id}
-                                        className="font-ibm text-[13px] 2xl:text-[16px]">
-
+                                        className="font-ibm text-[13px] 2xl:text-[16px] w-fit group">
                                         <Link to={item.path}>
                                             {item.title}
-                                        </Link>
 
+                                            <div className="bg-[#3B82F6] h-0.5 w-0 group-hover:w-full"></div>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
@@ -101,7 +101,7 @@ export default function Footer() {
                 </div>
                 <div className="flex-col gap-1 hidden lg:flex">
                     <h2 className="font-ibm font-medium 2xl:text-[22px]">Stay Connected</h2>
-                    <div className="flex gap-2 mt-3">
+                    <div className="flex gap-2 2xl:mt-3 mt-1">
                         <img src="/footer/mail.svg" alt="" 
                             className="w-3 2xl:w-6"/>
                         <p className="text-[13px] 2xl:text-[16px] font-ibm">contact@aiche-itenas.org</p>
