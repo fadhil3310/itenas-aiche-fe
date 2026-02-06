@@ -27,7 +27,7 @@ const menuItems: MenuItem[] = [
   {
     id: 4,
     title: "Struktur Organisasi",
-    path: "/organizational-structure"
+    path: "/structure"
   },
   {
     id: 5,
