@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Footer from '@/components/Footer'
+import PillInfo from '@/components/PillInfo'
 
 export const Route = createFileRoute('/')({ component: App })
 
@@ -12,11 +13,7 @@ function App() {
           className='w-45 sm:w-55 2xl:w-70'/>
 
         <div className='flex flex-col gap-1 items-center'>
-          <div className='font-ibm text-[10px] font-medium border border-[#10B981]/20 rounded-2xl w-fit px-2 py-1 bg-[#10B981]/10 text-[#10B981] flex gap-1 items-center justify-center'>
-            <img src="/pillinfo/sustainability.svg" alt="" 
-              className='sm:w-5'/>
-            <p className='sm:text-[12px] 2xl:text-[14px]'>ENGINEERING SUSTAINABLE FUTURE</p>
-          </div>
+          <PillInfo text='ENGINEERING SUSTAINABLE FUTURE' showIcon={true} icon='/pillinfo/sustainability.svg'/>
 
           <h1 className='font-nunito font-bold text-[40px] sm:text-[50px] 2xl:text-[64px]'>AIChE <span className='bg-linear-to-r from-[#10B981] to-[#2563EB] text-transparent bg-clip-text'>SC ITENAS</span></h1>
 
