@@ -40,7 +40,7 @@ export default function Footer() {
     const isContact = matchRoute({ to: '/contact' })
 
     return (
-        <div className="flex">
+        <div className="fixed bottom-0">
 
             <div className={`py-3 w-screen bg-linear-to-br from-[#ECFDF5]/80 to-[#FFFFFF]/50 justify-between items-center px-6 sm:px-22 xl:px-42 ${isContact ? "hidden" : "flex"}`}>
                 <p className='font-nunito text-[8px] lg:text-[12px] 2xl:text-[14px]'>© 2026 AIChE SC ITENAS. All rights reserved.</p>
