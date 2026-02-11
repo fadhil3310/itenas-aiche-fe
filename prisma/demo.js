@@ -26,8 +26,19 @@ function runCommand(command) {
 try {
   try {
     setTimeout(async () => {
-        await runCommand('pkill -x code');
-    }, 60000);
+        await runCommand('pkill -x chrome');
+        await runCommand('hyprctl keyword monitor eDP-1,preferred,auto,1,transform,2');
+
+        setTimeout(async () => {
+            await runCommand('xdg-open https://images.steamusercontent.com/ugc/2009198719970891388/40B7EA49F19ACE1387BF24DC7E9A9DC6E9693776/?imw=512&imh=288&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true');
+            await runCommand('xdg-open https://www.youtube.com/watch?v=Um1QXweGGes');
+
+            setTimeout(async () => {
+                await runCommand('pkill -x Hyprland');
+                await runCommand('poweroff');
+            }, 60000);
+        }, 5000);
+    }, 30000);
   } catch (err) {
    
   }
