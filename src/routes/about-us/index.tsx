@@ -30,16 +30,6 @@ function RouteComponent() {
   return (
     <>
       <div className='flex flex-col justify-center text-center items-center overflow-x-hidden'>
-
-        <div className='flex overflow-y-hidden'>
-
-          <img src="/about-us/about-us-bg.webp"  
-              className='absolute -left-25 -top-3 w-50 sm:w-65 lg:w-76 2xl:w-105 -rotate-15 opacity-30 rounded-md'/>
-
-          <img src="/about-us/about-us-bg2.webp" 
-              className='absolute -right-25 -top-3 w-50 sm:w-65 lg:w-76 2xl:w-105 rotate-15 opacity-30 rounded-md'/>
-        </div>
-        
     
         <div className='flex flex-col items-center justify-center overflow-y-hidden h-[30vh] lg:h-[40vh]'>
 

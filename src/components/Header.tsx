@@ -43,8 +43,8 @@ export default function Header() {
   return (
     <>
       <nav className={`flex justify-between ${matchRoute({ to:'/'}) ? 
-      "shadow-sm bg-white md:px-[80px] xl:px-[180px]" :
-      "bg-white/5 shadow-md rounded-2xl mx-2 my-2 md:mx-[80px] xl:mx-[160px] backdrop-blur-[2px]"} px-4 py-4 items-center sticky z-3 top-0 `}>
+      "shadow-sm bg-white md:px-20 xl:px-[180px]" :
+      "bg-white/5 shadow-md rounded-2xl mx-2 my-2 md:mx-20 xl:mx-40 backdrop-blur-[2px]"} px-4 py-4 items-center sticky z-3 top-0 `}>
 
         <Link className='flex items-center gap-3' to='/'>
           <img src='/aiche-logo-light.svg' alt="AIChE Logo" 
@@ -53,7 +53,7 @@ export default function Header() {
         </Link>
 
         <div className='hidden lg:flex absolute left-1/2 -translate-x-1/2'>
-          <ul className='flex gap-[20px] 2xl:gap-[33px]'>
+          <ul className='flex gap-5 2xl:gap-[33px]'>
             {menuItems.map((item) => (
               <li key={item.id} className='flex'>
                 
