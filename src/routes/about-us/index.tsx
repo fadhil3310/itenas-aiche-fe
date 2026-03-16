@@ -30,9 +30,9 @@ function RouteComponent() {
   return (
     <>
 
-      <div className='flex flex-col justify-center text-center items-center overflow-x-hidden mt-20'>
+      <div className='flex flex-col justify-center text-center items-center overflow-x-hidden py-35'>
     
-        <div className='flex flex-col items-center justify-center overflow-y-hidden h-[30vh] lg:h-[40vh]'>
+        <div className='flex flex-col items-center justify-center overflow-y-hidden h-[25vh] lg:h-[30vh]'>
           <PillInfo text='ABOUT US' showIcon={false} />
     
           <div className='flex flex-col leading-9.5 mt-4 2xl:mt-6'>
@@ -62,7 +62,7 @@ function RouteComponent() {
               </div>
             </div>
 
-            <div className='flex flex-col mt-7 xl:mt-14 px-2 2xl:mt-30 overflow-y-hidden'>
+            <div className='flex flex-col mt-7 xl:mt-20 px-2 2xl:mt-40 overflow-y-hidden'>
               <h3 className='font-ibm font-bold text-[12px] 2xl:text-[16px] text-[#3B82F6]'>OUR CORE VALUES</h3>
 
               <h2 className='font-nunito font-bold text-[28px] 2xl:text-[43px]'><span className='text-[#3B82F6]'>Vision</span> & <span className='text-[#10B981]'>Mission</span></h2>
