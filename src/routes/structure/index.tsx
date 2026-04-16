@@ -8,7 +8,7 @@ export const Route = createFileRoute('/structure/')({
 
 function RouteComponent() {
   return (
-    <div className='flex flex-col h-auto min-h-screen py-20 my-16 items-center justify-center gap-16'>
+    <div className='flex flex-col h-auto min-h-screen py-20 my-16 items-center justify-center gap-16 px-10'>
       <div className='flex flex-col gap-3 items-center'>
         <span className='font-ibm font-semibold text-[#0EA5E9] text-sm'>OUR TEAM</span>
         <h2 className='font-ibm font-semibold text-4xl'>Organizational Structure</h2>
@@ -34,7 +34,7 @@ function RouteComponent() {
         }}/>
       </div>
 
-      <div className='flex gap-20'>
+      <div className='flex max-lg:flex-col max-lg:grid max-lg:grid-cols-2 gap-10 lg:gap-20'>
         <SmallStructureCards data={
           {
             name: "Budi Santoso",
